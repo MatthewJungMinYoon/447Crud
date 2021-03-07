@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to Matt Yoon's Crud App {% endblock %}</h1>
+    {% for stud in studs %}
+        <a href="{{ url_for('stud', stud_id=stud['id']) }}">
+            <h2>{{ stud['name'] }}</h2>
+        </a>
+        <span class="badge badge-primary">{{ stud['id'] }}</span>
+        <h3>{{ stud['marks'] }}</h3>
+        <a href="{{ url_for('edit', id=stud['id']) }}">
+            <span class="badge badge-warning">Edit</span>
+        </a>
+        <hr>
+    {% endfor %}
+{% endblock %}

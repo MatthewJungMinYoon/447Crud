@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS studs;
+
+CREATE TABLE studs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    marks INTEGER
+);

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Create a New Post {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name"
+               placeholder="Student Name" class="form-control"
+               value="{{ request.form['name'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="id">ID</label>
+        <textarea name="id" placeholder="Student ID"
+                  class="form-control">{{ request.form['id'] }}</textarea>
+    
+    <div class="form-group">
+        <label for="marks">Marks</label>
+        <textarea name="marks" placeholder="Student Marks"
+                   class="form-control">{{ request.form['marks'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}
